@@ -1,45 +1,51 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  console.log("Dark mode enabled:", window.matchMedia('(prefers-color-scheme: dark)').matches);
   return (
     <>
-      <div className="flex justify-center items-center gap-8 mb-8">
-        <a href="https://vite.dev" target="_blank">
-          <img
-            src={viteLogo}
-            className="logo hover:animate-spin"
-            alt="Vite logo"
-          />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-
-      <h1 className="text-4xl font-bold text-avocado mb-8">Vite + React</h1>
-
-      <div className="card-avocado">
-        <button
-          className="bg-]"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          count is {count}
+      <div className="min-h-screen bg-surface p-8 space-y-4">
+        <h1 className="text-3xl font-bold text-text mb-8">Renk Paleti Test</h1>
+        
+        {/* Primary colors */}
+        <button className="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded">
+          Primary Button
         </button>
-        <p className="mt-4 text-avocado">
-          Edit{" "}
-          <code className="bg-gray-200 px-2 py-1 rounded">src/App.jsx</code> and
-          save to test HMR
-        </p>
+        
+        {/* Avocado colors */}
+        <div className="bg-avocado-100 text-avocado-800 p-4 rounded">
+          Avocado Background
+        </div>
+        
+        {/* Semantic colors */}
+        <div className="bg-success-500 text-white p-4 rounded">
+          Başarı Mesajı
+        </div>
+        
+        <div className="bg-error-500 text-white p-4 rounded">
+          Hata Mesajı
+        </div>
+        
+        <div className="bg-warning-500 text-black p-4 rounded">
+          Uyarı Mesajı
+        </div>
+        
+        <div className="bg-info-500 text-white p-4 rounded">
+          Bilgi Mesajı
+        </div>
+        
+        {/* Surface colors */}
+        <div className="bg-surface border border-outline p-4 rounded">
+          Surface Container
+        </div>
+        
+        {/* Text colors */}
+        <div className="space-y-2">
+          <p className="text-text">Ana metin</p>
+          <p className="text-text-secondary">İkincil metin</p>
+          <p className="text-text-tertiary">Üçüncül metin</p>
+        </div>
       </div>
-
-      <p className="text-avocado-light mt-8">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }

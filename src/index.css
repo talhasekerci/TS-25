@@ -1,90 +1,146 @@
 @import "tailwindcss";
 
-:root {
-  --breakpoint-3xl: 1920px;
-   /* Colors from config */
-  --color-brown: #3e322a;
-  --color-lightBrown: #a69590;
-  --color-darkBrown: #2a1f1a;
-  --color-black: #1e1917;
-  --color-white: #f8f6f0;
-  --color-cyan: #22d3ee;
-  --color-lightCyan: #67e8f9;
-  --color-darkCyan: #0891b2;
-  --color-orange: #f97316;
-  --color-lightOrange: #fb923c;
-  --color-darkOrange: #ea580c;
-  --color-gray: #6b7280;
-  --color-lightGray: #9ca3af;
-  --color-darkGray: #374151;
-  
-/* Existing avocado colors */
-  --color-avocado-100: oklch(0.99 0 0);
-  --color-avocado-200: oklch(0.98 0.04 113.22);
-  --color-avocado-300: oklch(0.94 0.11 115.03);
-  --color-avocado-400: oklch(0.92 0.19 114.08);
-  --color-avocado-500: oklch(0.84 0.18 117.33);
+@theme {
+  /* Typography */
+  --font-display: "Satoshi", "sans-serif";
+  --font-body: "Inter", "sans-serif";
+
+  /* Breakpoints */
+  --breakpoint-3xl: 120rem;
+
+  /* Brand Colors */
+  --color-primary: #0d9488;
+  --color-primary-50: #f0fdfa;
+  --color-primary-100: #ccfbf1;
+  --color-primary-200: #99f6e4;
+  --color-primary-300: #5eead4;
+  --color-primary-400: #2dd4bf;
+  --color-primary-500: #14b8a6;
+  --color-primary-600: #0d9488;
+  --color-primary-700: #0f766e;
+  --color-primary-800: #115e59;
+  --color-primary-900: #134e4a;
+  --color-primary-950: #042f2e;
+
+  /* Secondary/Avocado Colors */
+  --color-avocado-50: oklch(0.99 0 0);
+  --color-avocado-100: oklch(0.98 0.04 113.22);
+  --color-avocado-200: oklch(0.94 0.11 115.03);
+  --color-avocado-300: oklch(0.92 0.19 114.08);
+  --color-avocado-400: oklch(0.84 0.18 117.33);
+  --color-avocado-500: oklch(0.76 0.16 119.45);
   --color-avocado-600: oklch(0.53 0.12 118.34);
-  
-  /* Transitions */
+  --color-avocado-700: oklch(0.45 0.1 120.12);
+  --color-avocado-800: oklch(0.38 0.08 121.45);
+  --color-avocado-900: oklch(0.32 0.06 122.78);
+  --color-avocado-950: oklch(0.25 0.04 124.12);
+
+  /* Neutral Colors */
+  --color-white: #ffffff;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-black: #000000;
+
+  /* Semantic Colors - Success */
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-200: #bbf7d0;
+  --color-success-300: #86efac;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-success-800: #166534;
+  --color-success-900: #14532d;
+
+  /* Semantic Colors - Warning */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+
+  /* Semantic Colors - Error */
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-error-200: #fecaca;
+  --color-error-300: #fca5a5;
+  --color-error-400: #f87171;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+  --color-error-700: #b91c1c;
+  --color-error-800: #991b1b;
+  --color-error-900: #7f1d1d;
+
+  /* Semantic Colors - Info */
+  --color-info-50: #eff6ff;
+  --color-info-100: #dbeafe;
+  --color-info-200: #bfdbfe;
+  --color-info-300: #93c5fd;
+  --color-info-400: #60a5fa;
+  --color-info-500: #3b82f6;
+  --color-info-600: #2563eb;
+  --color-info-700: #1d4ed8;
+  --color-info-800: #1e40af;
+  --color-info-900: #1e3a8a;
+
+  /* LIGHT THEME - Surface Colors */
+  --color-surface: #ffffff;
+  --color-surface-variant: #f8fafc;
+  --color-surface-elevated: #ffffff;
+  --color-outline: #e2e8f0;
+  --color-outline-variant: #f1f5f9;
+
+  /* LIGHT THEME - Text Colors */
+  --color-text: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #64748b;
+  --color-text-inverse: #ffffff;
+
+  /* Animations & Transitions */
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
-  
-  /* Font variables */
-  --font-josefin: "Josefin Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-roboto: "Roboto", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Josefin Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-special: "Roboto", ui-monospace, system-ui, monospace;
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-fast: 150ms;
+  --transition-normal: 250ms;
+  --transition-slow: 350ms;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-/* Global styles */
-body {
-  font-family: var(--font-josefin);
-  margin: 0;
-  min-height: 100vh;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-josefin);
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  /* font-family: var(--font-josefin); */
-  background-color: #255382;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-/* @media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* DARK THEME - Surface Colors */
+    --color-surface: #0f172a;
+    --color-surface-variant: #1e293b;
+    --color-surface-elevated: #334155;
+    --color-outline: #475569;
+    --color-outline-variant: #334155;
+
+    /* DARK THEME - Text Colors */
+    --color-text: #f8fafc;
+    --color-text-secondary: #cbd5e1;
+    --color-text-tertiary: #94a3b8;
+    --color-text-inverse: #0f172a;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
+}
+
+/* Base styles */
+body {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  transition: background-color var(--transition-normal) var(--ease-fluid),
+    color var(--transition-normal) var(--ease-fluid);
+}
